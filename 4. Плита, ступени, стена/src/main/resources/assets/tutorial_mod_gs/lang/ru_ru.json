@@ -1,0 +1,9 @@
+{
+  "item.tutorial_mod_gs.stone_stick": "Каменная палка",
+  "block.tutorial_mod_gs.stone_stick_block": "Блок из каменных палок",
+  "block.tutorial_mod_gs.stone_stick_slab": "Плита из каменных палок",
+  "block.tutorial_mod_gs.stone_stick_stairs": "Ступени из каменных палок",
+  "block.tutorial_mod_gs.stone_stick_wall": "Стена из каменных палок",
+  "itemGroup.tutorial_mod_gs_items": "Тестовый мод: Предметы",
+  "itemGroup.tutorial_mod_gs_blocks": "Тестовый мод: Блоки"
+}
