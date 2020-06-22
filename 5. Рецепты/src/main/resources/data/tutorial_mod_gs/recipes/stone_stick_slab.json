@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tutorial_mod_gs:stone_stick_block"
+    }
+  },
+  "result": {
+    "item": "tutorial_mod_gs:stone_stick_slab",
+    "count": 6
+  }
+}

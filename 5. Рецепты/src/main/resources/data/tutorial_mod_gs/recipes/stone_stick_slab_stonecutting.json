@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tutorial_mod_gs:stone_stick_block"
+  },
+  "result": "tutorial_mod_gs:stone_stick_slab",
+  "count": 2
+}

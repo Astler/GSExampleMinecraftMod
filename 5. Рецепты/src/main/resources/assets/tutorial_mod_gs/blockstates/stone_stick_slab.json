@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "tutorial_mod_gs:block/stone_stick_slab" },
+    "type=top": { "model": "tutorial_mod_gs:block/stone_stick_slab_top" },
+    "type=double": { "model": "tutorial_mod_gs:block/stone_stick_block" }
+  }
+}
