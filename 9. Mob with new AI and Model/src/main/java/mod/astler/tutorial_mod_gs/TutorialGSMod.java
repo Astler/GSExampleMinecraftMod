@@ -1,6 +1,7 @@
 package mod.astler.tutorial_mod_gs;
 
 import mod.astler.tutorial_mod_gs.entity.ModEntityTypes;
+import net.minecraft.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
