@@ -1,10 +1,8 @@
 package mod.astler.tutorial_mod_gs.client;
 
-
 import mod.astler.tutorial_mod_gs.TutorialGSMod;
 import mod.astler.tutorial_mod_gs.client.entity.render.GSCowRenderer;
 import mod.astler.tutorial_mod_gs.entity.ModEntityTypes;
-import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
