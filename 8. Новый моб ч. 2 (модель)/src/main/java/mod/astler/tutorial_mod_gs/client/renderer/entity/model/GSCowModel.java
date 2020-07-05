@@ -17,9 +17,6 @@ public class GSCowModel extends EntityModel<GSCowEntity> {
     private final ModelRenderer mNose;
     private final ModelRenderer mRightEar;
     private final ModelRenderer mLeftEar;
-    private final ModelRenderer mIDK;
-
-    private float headRotationAngleX;
 
     public GSCowModel() {
         textureWidth = 64;
@@ -97,10 +94,10 @@ public class GSCowModel extends EntityModel<GSCowEntity> {
         mBody.addChild(chest);
         chest.setTextureOffset(0, 36).func_228303_a_(-6.0F, -6.0F, -8.0F, 12.0F, 10.0F, 18.0F, 0.0F, false);
 
-        mIDK = new ModelRenderer(this);
-        mIDK.setRotationPoint(0.0F, 0.0F, 0.0F);
-        mBody.addChild(mIDK);
-        mIDK.setTextureOffset(0, 14).func_228303_a_(-2.0F, -12.0F, 4.0F, 4.0F, 2.0F, 6.0F, 0.0F, false);
+        ModelRenderer IDK = new ModelRenderer(this);
+        IDK.setRotationPoint(0.0F, 0.0F, 0.0F);
+        mBody.addChild(IDK);
+        IDK.setTextureOffset(0, 14).func_228303_a_(-2.0F, -12.0F, 4.0F, 4.0F, 2.0F, 6.0F, 0.0F, false);
     }
 
     public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -115,17 +112,11 @@ public class GSCowModel extends EntityModel<GSCowEntity> {
     }
 
     public void func_225597_a_(GSCowEntity p_225597_1_, float p_225597_2_, float p_225597_3_, float p_225597_4_, float p_225597_5_, float p_225597_6_) {
-        this.mHead.rotateAngleX = this.headRotationAngleX;
+        this.mHead.rotateAngleX = p_225597_6_ * ((float) Math.PI / 180F);
+        this.mHead.rotateAngleY = p_225597_5_ * ((float) Math.PI / 180F);
         this.mLeftFront.rotateAngleX = MathHelper.cos(p_225597_2_ * 0.6662F) * 1.4F * p_225597_3_;
         this.mLeftBack.rotateAngleX = MathHelper.cos(p_225597_2_ * 0.6662F + (float) Math.PI) * 1.4F * p_225597_3_;
         this.mRightFront.rotateAngleX = MathHelper.cos(p_225597_2_ * 0.6662F + (float) Math.PI) * 1.4F * p_225597_3_;
         this.mRightBack.rotateAngleX = MathHelper.cos(p_225597_2_ * 0.6662F) * 1.4F * p_225597_3_;
-    }
-
-    public void setLivingAnimations(GSCowEntity entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
-        super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
-        this.mHead.rotationPointY = entityIn.getHeadRotationPointY(partialTick) * 9 - 22;
-        this.headRotationAngleX = entityIn.getHeadRotationAngleX(partialTick);
-        mIDK.showModel = entityIn.hasMilk();
     }
 }
