@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class GSCowRenderer extends MobRenderer<GSCowEntity, GSCowModel> {
-    private static final ResourceLocation COW_TEXTURES = new ResourceLocation(TutorialGSMod.MODID, "textures/entity/gs_cow.png");
+    private static final ResourceLocation COW_TEXTURES = new ResourceLocation(TutorialGSMod.MODID, "textures/entity/cow/gs_cow.png");
 
     public GSCowRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new GSCowModel(), 0.7F);

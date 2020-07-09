@@ -13,6 +13,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
@@ -57,6 +58,7 @@ public class GSCowEntity  extends AnimalEntity {
 
     public void livingTick() {
         if (this.world.isRemote) {
+            //this.glowing = hasMilk();
             this.cowTimer = Math.max(0, this.cowTimer - 1);
         }
 
@@ -64,7 +66,6 @@ public class GSCowEntity  extends AnimalEntity {
             if (!this.world.isRemote && this.isAlive() && !this.isChild() && --this.timeUntilMilk <= 0) {
                 this.playSound(SoundEvents.ENTITY_COW_AMBIENT, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 setHasMilk(true);
-                //this.glowing = hasMilk();
             }
         }
 
@@ -73,13 +74,11 @@ public class GSCowEntity  extends AnimalEntity {
 
     @OnlyIn(Dist.CLIENT)
     public void handleStatusUpdate(byte id) {
-
         if (id == 10) {
             this.cowTimer = 40;
         } else {
             super.handleStatusUpdate(id);
         }
-
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -178,9 +177,9 @@ public class GSCowEntity  extends AnimalEntity {
 
             return true;
         } else if (itemstack.getItem() == Items.DEBUG_STICK) {
-            if(!player.world.isRemote)
+            if(!world.isRemote) {
                 player.sendMessage(new StringTextComponent("[TUTORMOD]\nHAS MILK: " + hasMilk() + "\nHUNGRY: " + isHungry() + "\nTIME UNTIL MILK: " + timeUntilMilk));
-
+            }
             return true;
         }
         else {
